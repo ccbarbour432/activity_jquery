@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+
+    <link rel="stylesheet" href="./styles/main.css" type="text/css" />
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- Validation Plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+
+     <!-- Fallback to CDN if local fails -->
+
+     <script>
+        if (typeof jQuery === "undefined") {
+            console.log("Local jQuery Failed. Loading CDN version");
+
+            document.write('<script src="https://code.jquery.com/jquery-4.0.0.min.js"><\/script>');
+        } else {
+            console.log("Local jQuery loaded successfully.")
+        }
+     </script>
+
+</head>
+
+<h1> Common Uses of jQuery</h1>
+
+<p>
+
+
+</p>
+
+<script>
+    
+    $(document).ready(function() {
+
+        $("#feedback_form").validate({
+            rules: {
+                name: {
+                    required: true
+                },
+                email: {
+                    required: true,
+                    email: true,
+                    minlength: 8
+                },
+                subject: {
+                    required: true
+                },
+                message: {
+                    required: true,
+                    minlength: 10
+                }
+            },
+
+            messages: {
+                name: "Please enter your name",
+                email: {
+                    required: "Email is required",
+                    email: "Email address is not valid",
+                    minlength: "Email must be at least 8 characters in length"
+                },
+                subject: "Please enter a subject",
+                message: {
+                    required: "Please enter a message",
+                    minlength: "Message must be at least 10 characters"
+                }
+            },
+
+            /*===========================
+             Count num of invalid fields
+            ============================*/
+            invalidHandler: function(event, validator) {
+                let errors = validator.numberOfInvalids();
+
+                if (errors) {
+                    $(".form_errors").text(
+                        "You missed " + errors + " required field(s). Please correct them."
+                    );
+                } else {
+                    $(".form_errors").text("");
+                }
+            }
+        });
+    });
+
+    </script>
