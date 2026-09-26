@@ -1,0 +1,24 @@
+{
+  "name": "activity_jquery",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ccbarbour432/activity_jquery.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/ccbarbour432/activity_jquery/issues"
+  },
+  "homepage": "https://github.com/ccbarbour432/activity_jquery#readme",
+  "dependencies": {
+    "jquery": "^4.0.0"
+  }
+}
