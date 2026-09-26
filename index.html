@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
 
     <link rel="stylesheet" href="./styles/main.css" type="text/css" />
 
@@ -23,9 +22,14 @@
         }
      </script>
 
-     <script>
+     <!-- Validation Plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
 
+     <!-- Javascript -->
+     <script>
     $(document).ready(function() {
+
+        $("#paragraph").css("color", "blue");
 
         $("#feedback_form").validate({
             rules: {
@@ -43,15 +47,19 @@
                 }
             },
 
-            messages: {
-                name: "Please enter your name",
-                email: {
-                    required: "Email is required",
-                    email: "Email address is not valid",
-                    minlength: "Email must be at least 8 characters in length"
-                },
-                
-            },
+    messages: {
+        name: "Please enter your name",
+        email: {
+            required: "Email is required",
+            email: "Email address is not valid",
+            minlength: "Email must be at least 8 characters in length"
+        },
+    message: {
+        required: "Please enter a message",
+        minlength: "Message must be at least 10 characters"
+    }
+},
+                          
 
             /* Count number of invalid fields */
             invalidHandler: function(event, validator) {
@@ -70,9 +78,7 @@
 
     </script>
 
- <!-- Validation Plugin -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
-
+ 
 </head>
 <body>
     <header>
@@ -81,7 +87,7 @@
     </header>
 
     <main>
-
+        <section>
     <p id="paragraph">
 
         jQuery is used heavily among many websites and has been used since the 90's. Websites use it to change or style text,
@@ -97,18 +103,26 @@
     </a>
 
     </p>
+    </section>
+
     
     <form id="feedback_form">
 
+        <section>
             <label for="name">Name</label>
             <input type="text" id="name" name="name">
+        </section>
 
+        <section>
             <label for="email">Email</label>
             <input type="email" id="email" name="email">
+        </section>
 
+        <section>
             <label for="message">Message</label>
             <textarea id="message" name="message"></textarea>
-
+        </section>
+        
             <button type="submit">Submit</button>
 
         </form>
